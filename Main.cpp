@@ -113,7 +113,7 @@ int main()	{
 					break;
 				}
 				else
-					cout << "Ah! you enterd wrong alphbet." << "\n";
+					cout << "Sorry you enterd wrong alphbet." << "\n";
 			}
 			flag=0;
 			for(i=0;*(ans+i)!='\0';i++)	{
