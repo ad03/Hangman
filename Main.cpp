@@ -14,114 +14,120 @@ int main()	{
 	cout << "\n";
 	int i,flag=0,error=0,counter=0;
 	char t;
-	srand(time(NULL));
-	int n = (rand() % 11 )+ 1;
-	string_generator(n);
+	int n;
 	char uds[101];
 	char ans[101];
-	switch(n)
-	{
-		case 1 : { 
-					char const *str = "13 REASONS WHY";
-					strcpy(ans,str);
-				 	break; 
-				 }
-		case 2 : { 
-					char const *str = "GAME OF THRONES";
-					strcpy(ans,str);
-				 	break; 
-				 }
-		case 3 : { 
-					char const *str = "ARTHUR CONAN DOYLE";
-					strcpy(ans,str);
-				 	break; 
-				 }
-		case 4 : { 
-					char const *str = "TVF PITCHERS";
-					strcpy(ans,str);
-				 	break; 
-				 }
-		case 5 : { 
-					char const *str = "ELVIS PRESLEY";
-					strcpy(ans,str);
-				 	break; 
-				 }
-		case 6 : {
-					char const *str = "JOHN LENNON";
-					strcpy(ans,str);
-				 	break;
-				 }
-		case 7 : {
-					char const *str = "SOVIET UNION";	
-					strcpy(ans,str);
-				 	break;
-				 }
-		case 8 : {
-					char const *str = "ARYABHATTA";
-					strcpy(ans,str);
-				 	break;
-				 }
-		case 9 : { 
-					char const *str = "RETURN OF THE JEDI";
-					strcpy(ans,str);
-				 	break; 
-				 }
-		case 10 : { 
-					char const *str = "GEORGE WASHINGTON";
-					strcpy(ans,str);
-				 	break;
-				  }
-		case 11 : { 
-					char const *str = "THEODORE ROOSEVELT";
-					strcpy(ans,str);
-				 	break;
-				  }
-	}
+	int exit=1;
+	while(exit != 0)	{
+		srand(time(NULL));
+		n = (rand() % 11 )+ 1;
+		string_generator(n);
+		switch(n)
+		{
+			case 1 : { 
+						char const *str = "13 REASONS WHY";
+						strcpy(ans,str);
+				 		break; 
+					 }
+			case 2 : { 
+						char const *str = "GAME OF THRONES";
+						strcpy(ans,str);
+					 	break; 
+					 }
+			case 3 : { 
+						char const *str = "ARTHUR CONAN DOYLE";
+						strcpy(ans,str);
+				 		break; 
+				 	}
+			case 4 : { 
+						char const *str = "TVF PITCHERS";
+						strcpy(ans,str);
+				 		break; 
+				 	}
+			case 5 : { 
+						char const *str = "ELVIS PRESLEY";
+						strcpy(ans,str);
+					 	break; 
+					 }
+			case 6 : {
+						char const *str = "JOHN LENNON";
+						strcpy(ans,str);
+					 	break;
+					 }
+			case 7 : {
+						char const *str = "SOVIET UNION";	
+						strcpy(ans,str);
+					 	break;
+					 }
+			case 8 : {
+						char const *str = "ARYABHATTA";
+						strcpy(ans,str);
+					 	break;
+					 }
+			case 9 : { 
+						char const *str = "RETURN OF THE JEDI";
+						strcpy(ans,str);
+					 	break; 
+					 }
+			case 10 : { 
+						char const *str = "GEORGE WASHINGTON";
+						strcpy(ans,str);
+					 	break;
+					  }
+			case 11 : { 
+						char const *str = "THEODORE ROOSEVELT";
+						strcpy(ans,str);
+					 	break;
+				  	}
+		}
 	
-	for(i=0;i<101;i++)	{
-		*(uds+i) = '_';
-		if(*(uds+i) == '_')
-			flag++;
-	}
-	for(i=0;*(ans+i)!='\0';i++)	{
-		if(*(ans+i) == ' ')
-			*(uds+i) = ' ';
-		cout << *(uds+i) << " ";
-	}
-	cout << "\n";
-	while(flag != 0)	{
-		cin >> t;
-		if(t>=97 && t<=122)
-			t = t-('a'-'A');
-		counter = 0;
-		for(i=0;*(ans+i)!='\0';i++)	{
-			if(*(ans+i) == t)	{
-				*(uds+i) = t;
-				counter++;
-			}
-		}
-		if (counter == 0)	{
-			error++;
-			if(error==3)	{
-				cout << "Phewh! you lost :-(" << "\n" ;
-				for(i=0;*(ans+i)!='\0';i++)	
-					cout << *(ans+i);
-				cout << "\n";
-				break;
-			}
-			else
-				cout << "Ah! you enterd wrong alphbet." << "\n";
-		}
-		flag=0;
-		for(i=0;*(ans+i)!='\0';i++)	{
-			cout << *(uds+i) << " ";
+		for(i=0;i<101;i++)	{
+			*(uds+i) = '_';
 			if(*(uds+i) == '_')
-			flag++;
+				flag++;
+		}
+		for(i=0;*(ans+i)!='\0';i++)	{
+			if(*(ans+i) == ' ')
+				*(uds+i) = ' ';
+			cout << *(uds+i) << " ";
 		}
 		cout << "\n";
-		if(flag==0)
-			cout << "Bravo! you got it." << "\n";
-	}
+		while(flag != 0)	{
+			cin >> t;
+			if(t>=97 && t<=122)
+				t = t-('a'-'A');
+			counter = 0;
+			for(i=0;*(ans+i)!='\0';i++)	{
+				if(*(ans+i) == t)	{
+					*(uds+i) = t;
+					counter++;
+				}
+			}
+			if (counter == 0)	{
+				error++;
+				if(error==3)	{
+					cout << "Phewh! you lost :-(" << "\n" ;
+					for(i=0;*(ans+i)!='\0';i++)	
+						cout << *(ans+i);
+					cout << "\n";
+					break;
+				}
+				else
+					cout << "Ah! you enterd wrong alphbet." << "\n";
+			}
+			flag=0;
+			for(i=0;*(ans+i)!='\0';i++)	{
+				cout << *(uds+i) << " ";
+				if(*(uds+i) == '_')
+				flag++;
+			}
+			cout << "\n";
+			if(flag==0)
+				cout << "Bravo! you got it." << "\n";
+		}
+		cout << "Press 0 to exit ar any other number to play again" << "\n";
+		cin >> exit;
+	}	
 }
 
 void string_generator(int n)	{
